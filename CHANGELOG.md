@@ -1,0 +1,2 @@
+- App tested locally. Proceed to make installable version
+- Initial commit
