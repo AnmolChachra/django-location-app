@@ -40,7 +40,7 @@ setup(
     },
     project_urls={
         'Funding': 'https://donate.pypi.org',
-        'Say Thanks!': 'http://saythanks.io/to/AnmolChacha',
+        'Say Thanks!': 'https://saythanks.io/to/anmol.chachra@gmail.com',
         'Source': 'https://github.com/AnmolChachra/django-location-app/',
         'Tracker': 'https://github.com/AnmolChachra/django-location-app/issues',
     },
