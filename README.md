@@ -21,3 +21,6 @@ from django.urls import path, include
 urlpatterns += [path(('location/', include("location_app.urls")),]
 ```
 If in dev, visit http://localhost:[Port]/location/ and you should see the following UI
+
+https://user-images.githubusercontent.com/22666819/111712391-ead51c80-8823-11eb-96a3-9eb55f3cbe4c.mp4
+
