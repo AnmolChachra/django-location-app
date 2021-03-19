@@ -1,60 +1,67 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
-{% load crispy_forms_tags %}
-
-
 {{ form.media }}
 
 <style>
 #map{
-	height:20rem;
+	height:24rem;
+	margin-top:auto;
+	margin-bottom:auto;
+}
+input{
+	width:inherit;
+}
+.form-group{
+	margin-top:1rem;
+	margin-bottom:1rem;
 }
 </style>
 
-<div class="container-fluid">
-	<div class="row justify-content-center">
-		<div class="col-md-4 col-sm-12">
-			<div id="location" class="container-fluid" data-map-options="{{ map_options }}" data-marker-options="{{ marker_options }}">
-				<div id="map" class="col">
-				<!-- Map will be embedded here -->
-				</div>
-
-				<form action="" method="POST" onsubmit="enable_and_submit()">
+<div id="location" class="container container-table" data-map-options="{{ map_options }}" data-marker-options="{{ marker_options }}">
+	<div class="row justify-content-center my-auto mx-auto bg-light">
+			<div id="map" class="col-12 col-sm-6">
+			<!-- Map will be embedded here -->
+			</div>
+			<div id="location_details" class="col-12 col-sm-6 my-auto" style="display:none">
+				<form id="location_form" action="" method="POST">
 					{% csrf_token %}
-
-					<div class="row justify-content-center">
-						<div class="col-8">
-							{{form.location | as_crispy_field}}
+					{{form.place_id.as_hidden}}
+					<div class="form-row">
+						<div class="form-group col-6 col-sm-12">
+							{{form.place}}
+						</div>
+						<div class="form-group col-6 col-sm-12">
+							{{form.city}}
 						</div>
 					</div>
-					<div id="location_details" class="form-row" style="display:none">
-						{{form.place_id.as_hidden}}
-						<div class="form-group col-md-6 col">
-							{{form.place|as_crispy_field}}
+					<div class="form-row">
+						<div class=" form-group col-6 col-sm-12">
+							{{form.state}}
 						</div>
-						<div class="form-group col-md-6 col">
-							{{form.city|as_crispy_field}}
-						</div>
-						<div class="form-group col-md-6 col">
-							{{form.state|as_crispy_field}}
-						</div>
-						<div class="form-group col-md-6 col">
-							{{form.country|as_crispy_field}}
-						</div>
-						<div class="form-group col-md-6 col">
-							{{form.latitude|as_crispy_field}}
-						</div>
-						<div class="form-group col-md-6 col">
-							{{form.longitude|as_crispy_field}}
+						<div class="form-group col-6 col-sm-12">
+							{{form.country}}
 						</div>
 					</div>
-					<div class="row justify-content-end">
-						<div class="col-auto">
-							<button class="btn btn-primary" type="submit" name="button">Select Location</button>
+					<div class="form-row">
+						<div class="form-group col-6 col-sm-12">
+							{{form.latitude}}
 						</div>
-					</div>
-				</form>
+						<div class="form-group col-6 col-sm-12">
+							{{form.longitude}}
+						</div>
+					</form>
+				</div>
+			</div>
+	</div>
+	<div class="row justify-content-center">
+		<div class="row">
+			<div class="form-group pr-2 pt-1">
+				{{form.location}}
+			</div>
+			<div class="form-group pt-1">
+				<button class="btn btn-primary btn-sm" name="button" onclick="enable_and_submit()">Submit Location</button>
 			</div>
 		</div>
+		
 	</div>
 </div>
