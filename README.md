@@ -18,7 +18,7 @@ LOC_APP_MAPS_API_KEY = XXXXXXXXXXXXXXXXXXXXXX
 To see if installation was successful, add the following to your project's urls.py file
 ```
 from django.urls import path, include
-urlpatterns += [path(('location/', include("location_app.urls")),]
+urlpatterns += [path('location/', include("location_app.urls")),]
 ```
 If in dev, visit http://localhost:[Port]/location/ and you should see the following UI
 
