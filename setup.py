@@ -11,7 +11,7 @@ setup(
     author='Anmol Chachra',
     author_email='anmol.chachra@gmail.com',
     name='django-location-app',
-    version='1.0.1',
+    version='1.0.3',
     install_requires=['Django>=3.0'],
     python_requires='>=3.7',
     keywords='django geocomplete google maps places',
