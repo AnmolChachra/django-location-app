@@ -13,12 +13,12 @@ INSTALLED_APPS = (...
 ```
 Get your Google MAPS API key from [here](https://developers.google.com/maps/gmp-get-started) and add it to the settings. It is always a good idea to store the key as an environment variable and access via ```os.environ.get(<name>)```. [Learn more](https://dev.to/biplov/handling-passwords-and-secret-keys-using-environment-variables-2ei0)
 ```
-LOC_MAPS_API_KEY = XXXXXXXXXXXXXXXXXXXXXX
+LOC_APP_MAPS_API_KEY = XXXXXXXXXXXXXXXXXXXXXX
 ```
 To see if installation was successful, add the following to your project's urls.py file
 ```
 from django.urls import path, include
-urlpatterns += [path(('location/', include("location_app.urls")),]
+urlpatterns += [path('location/', include("location_app.urls")),]
 ```
 If in dev, visit http://localhost:[Port]/location/ and you should see the following UI
 
