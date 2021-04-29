@@ -9,5 +9,4 @@ class LocationAppWidget(forms.widgets.TextInput):
 
 	class Media:
 		js = ('//maps.googleapis.com/maps/api/js?key={}&libraries=places'.format(settings.MAPS_API_KEY),
-        	  'location_app/js/location.js',
         	 )
